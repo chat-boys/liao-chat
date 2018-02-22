@@ -42,12 +42,6 @@ module.exports = (options) => ({
         use: ['style-loader', 'css-loader'],
       },
       {
-        // Preprocess 3rd party .sass files located in node_modules
-        test: /\.sass$/,
-        include: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
         test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
         use: 'file-loader',
       },

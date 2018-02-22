@@ -28,6 +28,7 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import { Container, Box } from 'bloomer'
 
 export class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   /**
@@ -62,6 +63,9 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
               <FormattedMessage {...messages.startProjectMessage} />
             </p>
           </CenteredSection>
+          <Container>
+            <Box>This is a Bulma Bloomer Box</Box>
+          </Container>
           <Section>
             <H2>
               <FormattedMessage {...messages.trymeHeader} />
