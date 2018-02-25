@@ -67,7 +67,13 @@ This project would not be possible without the support by these amazing folks. [
 <a href="https://opencollective.com/react-boilerplate/backer/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/8/avatar.svg"></a>
 <a href="https://opencollective.com/react-boilerplate/backer/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/9/avatar.svg"></a>
 
-## License
+# Known Issues
 
-This project is licensed under the MIT license, Copyright (c) 2017 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+* When saving server-side code, causes client bundle to fail until client code file is safed. Workaround is to save a client file if you see an error like:
+
+```
+ERROR in ./app/app.js
+Module build failed: Error: ENOENT: no such file or directory, open '/www/app/app.js'
+```
+
+after working on server-side code.

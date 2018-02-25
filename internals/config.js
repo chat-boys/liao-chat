@@ -28,7 +28,8 @@ const ReactBoilerplate = {
         'ip',
         'minimist',
         'sanitize.css',
-        'bulma'
+        'bulma',
+        'express-ws',
       ],
 
       /**
