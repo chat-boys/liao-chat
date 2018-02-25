@@ -4,8 +4,13 @@ A new paradigm for chat.
 
 ## Quick start
 
-1. `yarn`
-2. `npm run start`
+First run:
+
+1. `docker-compose up -d --build`
+
+Subsequent runs:
+
+1. `docker-compose up -d`
 
 Now you're ready to rumble!
 
