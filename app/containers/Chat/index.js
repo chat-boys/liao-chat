@@ -19,6 +19,8 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
+import Chatroom from 'components/Chatroom'
+
 export class Chat extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
@@ -28,6 +30,9 @@ export class Chat extends React.Component { // eslint-disable-line react/prefer-
           <meta name="description" content="Description of Chat" />
         </Helmet>
         <FormattedMessage {...messages.header} />
+        <div className="Chatroom">
+          <Chatroom />
+        </div>
       </div>
     );
   }
