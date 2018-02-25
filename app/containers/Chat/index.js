@@ -12,6 +12,7 @@ import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
+import Chatroom from 'components/Chatroom';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectChat from './selectors';
@@ -19,7 +20,6 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
-import Chatroom from 'components/Chatroom'
 
 export class Chat extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {

@@ -15,8 +15,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
-import Chat from 'containers/Chat/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Chat from 'containers/Chat/Loadable';
 
 export default function App() {
   return (
