@@ -77,3 +77,24 @@ Module build failed: Error: ENOENT: no such file or directory, open '/www/app/ap
 ```
 
 after working on server-side code.
+
+* Injected reducers use all lower-case state keys, but the generated selector camel-cases the keys, causing a runtime error. Fix: change selector key to lowercase:
+
+```
+const selectChatContainerDomain = (state) => state.get('chatcontainer');
+```
+
+Error:
+```
+Uncaught TypeError: Cannot read property 'toJS' of undefined
+    at eval (selectors.js?cbd7:20)
+    at eval (index.js:75)
+    at eval (index.js:35)
+    at eval (index.js:89)
+    at eval (index.js:35)
+    at eval (index.js:85)
+    at Function.eval [as mapToProps] (index.js:35)
+    at mapToPropsProxy (wrapMapToProps.js:48)
+    at Function.detectFactoryAndVerify (wrapMapToProps.js:57)
+    at mapToPropsProxy (wrapMapToProps.js:48)
+```
