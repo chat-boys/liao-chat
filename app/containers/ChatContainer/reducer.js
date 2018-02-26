@@ -19,8 +19,7 @@ function chatContainerReducer(state = initialState, { type, payload }) {
     case SEND_MESSAGE_ACTION:
       return state;
     case RECEIVE_MESSAGE_ACTION: {
-      const messages = state.get('messages');
-      return state.set('messages', messages.push(payload));
+      return state.update('messages', (messages) => messages.push(payload));
     }
     default:
       return state;
