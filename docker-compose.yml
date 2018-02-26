@@ -1,9 +1,0 @@
-  app:
-    build: ./
-    container_name: chat-app
-    environment:
-      - NODE_ENV=development
-    volumes:
-      - ./:/www
-    ports:
-      - 3000:3000
