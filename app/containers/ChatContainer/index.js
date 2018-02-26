@@ -13,10 +13,12 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import makeSelectChatContainer from './selectors';
+import { getMessages } from './selectors';
 import { sendMessageAction } from './actions';
 import reducer from './reducer';
 import saga from './saga';
+
+const renderMessages = (messages) => messages.map((message) => <div>{message}</div>);
 
 class ChatContainer extends React.Component {
   constructor(props) {
@@ -48,7 +50,7 @@ class ChatContainer extends React.Component {
         </Helmet>
         <input id="text" onChange={this.inputChange} />
         <button id="send-button" onClick={this.sendMessage}>Send message</button>
-        <div id="receiving-area">{messages}</div>
+        <div id="receiving-area">{renderMessages(messages)}</div>
       </div>
     );
   }
@@ -60,7 +62,7 @@ ChatContainer.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  chatContainer: makeSelectChatContainer(),
+  messages: getMessages,
 });
 
 function mapDispatchToProps(dispatch) {

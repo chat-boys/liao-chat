@@ -14,15 +14,14 @@ const initialState = fromJS({
   messages: [],
 });
 
-function chatContainerReducer(state = initialState, action) {
-  switch (action.type) {
+function chatContainerReducer(state = initialState, { type, payload }) {
+  switch (type) {
     case SEND_MESSAGE_ACTION:
       return state;
-    case RECEIVE_MESSAGE_ACTION:
-      return {
-        messages: state.messages.push(action.message),
-        ...state,
-      };
+    case RECEIVE_MESSAGE_ACTION: {
+      const messages = state.get('messages');
+      return state.set('messages', messages.push(payload));
+    }
     default:
       return state;
   }
