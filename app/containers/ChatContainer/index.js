@@ -18,7 +18,10 @@ import { sendMessageAction } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-const renderMessages = (messages) => messages.map((message) => <div>{message}</div>);
+const renderMessages = (messages) => messages.map((message) =>
+  // TODO: Send a UUID with the message, use as key here
+  <div key={message}>{message}</div>
+);
 
 class ChatContainer extends React.Component {
   constructor(props) {
