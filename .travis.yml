@@ -6,7 +6,7 @@ script:
 - npm run build
 before_install:
 - openssl aes-256-cbc -K $encrypted_e8da51ecdaa4_key -iv $encrypted_e8da51ecdaa4_iv
-  -in LIAO-c10453114187.json.enc -out LIAO-c10453114187.json -d
+  -in LIAO-05250cb4190c.json.enc -out ~\/Downloads/LIAO-05250cb4190c.json -d
 - export CHROME_BIN=chromium-browser
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
@@ -20,7 +20,7 @@ cache:
 deploy:
 - &gaeDeploy
   provider: gae
-  keyfile: LIAO-c10453114187.json
+  keyfile: LIAO-05250cb4190c.json
   project: liao-197023
   skip_cleanup: true
 - <<: *gaeDeploy
