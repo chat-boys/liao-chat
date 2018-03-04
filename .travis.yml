@@ -1,27 +1,27 @@
 language: node_js
-
 node_js:
-  - 7
-  - 6
-  - 5
-
+- 9
+env:
+- WS_HOST=liao-197023.appspot.com
 script:
-  - node ./internals/scripts/generate-templates-for-linting
-  - npm run test
-  - npm run build
-
+- node ./internals/scripts/generate-templates-for-linting
+- npm run build
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
-notifications:
-  email:
-    on_failure: change
-
-after_success: 'npm run coveralls'
-
+- openssl aes-256-cbc -K $encrypted_e8da51ecdaa4_key -iv $encrypted_e8da51ecdaa4_iv
+  -in LIAO-1c22713e219a.json.enc -out LIAO-1c22713e219a.json -d
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
+deploy:
+- &gaeDeploy
+  provider: gae
+  keyfile: LIAO-1c22713e219a.json
+  project: liao-197023
+  skip_cleanup: true
+  default: true
+- <<: *gaeDeploy
+  on: deployments

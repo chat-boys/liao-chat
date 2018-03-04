@@ -1,0 +1,19 @@
+# This file specifies your Python application's runtime configuration
+# including URL routing, versions, static file uploads, etc. See
+# https://developers.google.com/appengine/docs/python/config/appconfig
+# for details.
+
+# TODO: Enter your application id below. If you have signed up
+# using cloud.google.com/console use the "project id" for your application
+# id.
+runtime: nodejs
+env: flex
+
+manual_scaling:
+  instances: 1
+
+network:
+  forwarded_ports:
+    - 65080
+  session_affinity: true
+  instance_tag: websocket
