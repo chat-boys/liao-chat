@@ -134,7 +134,6 @@
     "compression": "1.6.2",
     "cross-env": "5.0.0",
     "express": "4.15.3",
-    "express-ws": "^3.0.0",
     "fontfaceobserver": "2.0.9",
     "history": "4.6.3",
     "hoist-non-react-statics": "2.1.1",
@@ -160,7 +159,8 @@
     "sanitize.css": "4.1.0",
     "styled-components": "2.0.0",
     "warning": "3.0.0",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "ws": "^4.1.0"
   },
   "devDependencies": {
     "add-asset-html-webpack-plugin": "2.0.1",
