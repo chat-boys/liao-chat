@@ -5,6 +5,7 @@ env:
 - WS_HOST=liao-197023.appspot.com
 script:
 - node ./internals/scripts/generate-templates-for-linting
+- npm run build
 before_install:
 - openssl aes-256-cbc -K $encrypted_e8da51ecdaa4_key -iv $encrypted_e8da51ecdaa4_iv
   -in LIAO-1c22713e219a.json.enc -out LIAO-1c22713e219a.json -d
@@ -21,6 +22,5 @@ deploy:
   keyfile: LIAO-1c22713e219a.json
   project: liao-197023
   skip_cleanup: true
-  default: true
 - <<: *gaeDeploy
   on: deployments
