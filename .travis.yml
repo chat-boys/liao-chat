@@ -22,3 +22,6 @@ deploy:
   provider: gae
   keyfile: LIAO-a042e7ff7f6c.json
   project: liao
+    on:
+      - "master"
+      - "deployments"
