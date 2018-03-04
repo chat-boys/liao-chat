@@ -19,9 +19,10 @@ cache:
   directories:
   - node_modules
 deploy:
-  provider: gae
-  keyfile: LIAO-a042e7ff7f6c.json
-  project: liao
-    on:
-      - "master"
-      - "deployments"
+  - &gaeDeploy
+    provider: gae
+    keyfile: LIAO-a042e7ff7f6c.json
+    project: liao
+  - <<: *gaeDeploy
+    on: "deployments"
+
