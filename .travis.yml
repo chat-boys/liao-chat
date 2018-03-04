@@ -21,7 +21,7 @@ cache:
 deploy:
 - &gaeDeploy
   provider: gae
-  keyfile: LIAO-d3ac7574cb31.json
+  keyfile: LIAO-c160bb4b4005.json
   project: liao
   skip_cleanup: true
 - <<: *gaeDeploy
