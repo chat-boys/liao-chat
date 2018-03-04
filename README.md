@@ -7,10 +7,6 @@ A new paradigm for chat.
 1. `yarn`
 2. `npm run start`
 
-Now you're ready to rumble!
-
-> Please note that this boilerplate is **production-ready and not meant for beginners**! If you're just starting out with react or redux, please refer to https://github.com/petehunt/react-howto instead. If you want a solid, battle-tested base to build your next product upon and have some experience with react, this is the perfect start for you.
-
 ## Documentation
 
 * [**The Hitchhikers Guide to `react-boilerplate`**](docs/general/introduction.md): An introduction for newcomers to this boilerplate.
@@ -50,7 +46,34 @@ This project would not be possible without the support by these amazing folks. [
 <a href="https://opencollective.com/react-boilerplate/backer/8/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/8/avatar.svg"></a>
 <a href="https://opencollective.com/react-boilerplate/backer/9/website" target="_blank"><img src="https://opencollective.com/react-boilerplate/backer/9/avatar.svg"></a>
 
-## License
+# Known Issues
 
-This project is licensed under the MIT license, Copyright (c) 2017 Maximilian
-Stoiber. For more information see `LICENSE.md`.
+* When saving server-side code, causes client bundle to fail until client code file is safed. Workaround is to save a client file if you see an error like:
+
+```
+ERROR in ./app/app.js
+Module build failed: Error: ENOENT: no such file or directory, open '/www/app/app.js'
+```
+
+after working on server-side code.
+
+* Injected reducers use all lower-case state keys, but the generated selector camel-cases the keys, causing a runtime error. Fix: change selector key to lowercase:
+
+```
+const selectChatContainerDomain = (state) => state.get('chatcontainer');
+```
+
+Error:
+```
+Uncaught TypeError: Cannot read property 'toJS' of undefined
+    at eval (selectors.js?cbd7:20)
+    at eval (index.js:75)
+    at eval (index.js:35)
+    at eval (index.js:89)
+    at eval (index.js:35)
+    at eval (index.js:85)
+    at Function.eval [as mapToProps] (index.js:35)
+    at mapToPropsProxy (wrapMapToProps.js:48)
+    at Function.detectFactoryAndVerify (wrapMapToProps.js:57)
+    at mapToPropsProxy (wrapMapToProps.js:48)
+```
