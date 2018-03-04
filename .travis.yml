@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - 9
+env:
+- WS_HOST=liao-197023.appspot.com
 script:
 - node ./internals/scripts/generate-templates-for-linting
 before_install:
