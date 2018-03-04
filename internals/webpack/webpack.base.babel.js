@@ -92,8 +92,10 @@ module.exports = (options) => ({
     // inside your code for any environment checks; UglifyJS will automatically
     // drop any unreachable code.
     new webpack.DefinePlugin({
+      // TODO: better method for injecting env vars
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        WS_HOST: JSON.stringify(process.env.WS_HOST),
       },
     }),
     new webpack.NamedModulesPlugin(),
