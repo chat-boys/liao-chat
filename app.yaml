@@ -8,5 +8,5 @@
 # id.
 runtime: nodejs
 env: flex
-network:
-  forwarded_ports: ["3000"]
+env_variables:
+  HOST: liao-197023.appspot.com

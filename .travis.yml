@@ -4,6 +4,8 @@ node_js:
 script:
 - node ./internals/scripts/generate-templates-for-linting
 - npm run build
+env:
+- HOST=liao-197023.appspot.com
 before_install:
 - openssl aes-256-cbc -K $encrypted_e8da51ecdaa4_key -iv $encrypted_e8da51ecdaa4_iv
   -in LIAO-1c22713e219a.json.enc -out LIAO-1c22713e219a.json -d
