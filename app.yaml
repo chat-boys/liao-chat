@@ -8,3 +8,5 @@
 # id.
 runtime: nodejs
 env: flex
+network:
+  forwarded_ports: ["3000"]
