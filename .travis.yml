@@ -22,5 +22,6 @@ deploy:
   keyfile: LIAO-1c22713e219a.json
   project: liao-197023
   skip_cleanup: true
+  default: true
 - <<: *gaeDeploy
   on: deployments
